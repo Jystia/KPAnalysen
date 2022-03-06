@@ -1,0 +1,61 @@
+{
+
+    'name': 'KP2_KP4',
+
+    'algebra': 'Extended_Linear_Interval_Algebra',
+
+    "abbreviations": {"?": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI"},
+    
+    'description': 'Vergleich von KP2 (A) und KP4 (B) nach der Analyse der räumlichen Aussagen ',
+
+    'nodes': [
+        
+        ['A', ['ProperInterval']],
+        ['A1', ['ProperInterval']],
+        ['A2', ['ProperInterval']],
+        ['A3', ['ProperInterval']],
+        
+        
+        
+        ['B', ['ProperInterval']],       
+        ['B1', ['ProperInterval']],
+        ['B2', ['ProperInterval']],
+        ['B3', ['ProperInterval']],
+    
+
+
+    ],
+
+    'edges': [
+        
+        # KP2: Nähern -> Befahren -> Verlassen
+
+        ['A1', 'A2', 'M'],
+        ['A2', 'A3', 'M'],        
+        ['A1', 'A', 'S'],
+        ['A2', 'A', 'D'],
+        ['A3', 'A', 'F'],
+
+
+        # KP4: Nähern -> Befahren -> Verlassen
+        
+        ['B1', 'B2', 'M'],
+        ['B2', 'B3', 'M'],        
+        ['B1', 'B', 'S'],
+        ['B2', 'B', 'D'],
+        ['B3', 'B', 'F'],
+        
+        #Kombinieren der Basisintervalle
+        ['A1', 'B1', '?'],
+        ['A1', 'B2', 'B|BI|M|MI'],
+        ['A1', 'B3', 'B|BI|M|MI'],
+        ['A2', 'B1', 'B|BI|M|MI'],
+        ['A2', 'B2', '?'],
+        ['A2', 'B3', 'B|BI|M|MI'],
+        ['A3', 'B1', 'B|BI|M|MI'],
+        ['A3', 'B2', 'B|BI|M|MI'],
+        ['A3', 'B3', '?'],
+        ['A', 'B', 'D|DI|E|F|FI|S|SI']
+    ]
+
+}
